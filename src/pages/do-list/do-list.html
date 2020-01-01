@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title>Task List</ion-title>
+    <ion-buttons end (click)="logout()">
+        <button ion-button icon-only>
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+     
+      </ion-buttons>
+
+     
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--
+<div class ="newTask">
+  <ion-item>
+    <ion-label floating>Task</ion-label>
+    
+    <ion-input type="text" [(ngModel)]="taskn"></ion-input>
+    <button ion-button  item-end small round icon-only (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-item>
+
+  <div padding>
+		<ion-list>
+			<ion-item *ngFor="let todo of taskList; let i = index">
+        {{todo}}
+        <div class="item-note" item-end>
+          <button ion-button clear (click)="delete(i)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+		</ion-list>
+	</div>
+</div> -->
+<!--
+<ion-list>
+  <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.title}}
+    
+  </ion-item>
+  <button ion-button (click)="delete()">D</button>
+</ion-list>
+-->
+<button ion-button (click)="add()" class="btn" full> Add New Task</button>
+<ion-list>
+    <ion-item *ngFor="let todo of todoList; let i = index">
+        
+            {{ todo }}
+            <ion-buttons end >
+            <button ion-button color="danger" (click)="delete(i)">Delete</button>
+          </ion-buttons>
+     <!--   <ion-item-options>
+            <button danger (click)="delete(i)">
+                <ion-icon name="trash"></ion-icon>
+                Delete
+            </button>
+        </ion-item-options> -->
+    </ion-item>
+</ion-list>
+
+    
+
+
+</ion-content>

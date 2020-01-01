@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar  >
+    <ion-title>SignUp</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<form [formGroup]="formgroup" >
+    <ion-item >
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" formControlName="name" [(ngModel)]="nam" ></ion-input>
+    </ion-item>
+    
+    
+    <ion-item >
+      <ion-label floating>Password</ion-label>
+      <ion-input type="text" formControlName="password" [(ngModel)]="passwor"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formgroup.controls.password.valid && password.touched">
+        <p> *Password should be of min 6 digits<br/>
+             Should contain special character<br/>
+             Should contain Upper and Lower case letters
+        </p>
+      </ion-item>
+
+
+    <ion-item >
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email" [(ngModel)]="emai"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formgroup.controls.email.valid && email.touched">
+        <p> *Email is invalid</p>
+      </ion-item>
+
+
+    <ion-item >
+      <ion-label floating>Mobile Number</ion-label>
+      <ion-input type="number" formControlName="mnumber" [(ngModel)]="mnumbe"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formgroup.controls.mnumber.valid&& mnumber.touched">
+        <p> *Mobile Number should be of 10 digits</p>
+      </ion-item>
+
+
+    <button ion-button class="button" (click)="store()">Register</button>
+  
+</form>
+
+</ion-content>

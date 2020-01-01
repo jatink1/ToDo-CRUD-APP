@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+ <ion-title class="title">
+     To Do List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="back">
+  <div class="box">
+  <form [formGroup]="formgroup">
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email" ></ion-input>
+    </ion-item><ion-item *ngIf="!formgroup.controls.email.valid && email.touched">
+        <p> *Email is wrong</p>
+      </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password"  ></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formgroup.controls.password.valid && password.touched">
+        <p> *Password entered is wrong
+        </p>
+      </ion-item>
+
+    <br>
+<br>
+
+<button ion-button (click)="login()" round small>Login</button>
+<button ion-button (click)="sign()" class="signbtn" round small> Sign Up</button>
+</form>
+</div>
+</ion-content>
+
+
+

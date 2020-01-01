@@ -1,0 +1,32 @@
+.android, .md ,.wp{
+    page-home {
+        .title
+        {
+            text-align: center;
+        }
+        .box
+        {
+            text-align: center;
+            margin-top: 150px;
+            border: thick solid gray;
+            border-radius: 20px;
+        }
+
+        .login
+        {
+            background: url('/src/assets/imgs/background.png');
+            background-repeat: no-repeat;
+            width: 100%;
+            background-size: 100% 100%;
+        }
+
+        .logbtn
+        {
+            color: yellow;
+        }
+
+
+    }
+}
+
+
