@@ -9,15 +9,15 @@
 <ion-content padding class="back">
   <div class="box">
   <form [formGroup]="formgroup">
-    <ion-item>
-      <ion-label floating>Email</ion-label>
+    <ion-item id="rounded">
+      <ion-label >Email</ion-label>
       <ion-input type="text" formControlName="email" ></ion-input>
     </ion-item><ion-item *ngIf="!formgroup.controls.email.valid && email.touched">
         <p> *Email is wrong</p>
       </ion-item>
 
-    <ion-item>
-      <ion-label floating>Password</ion-label>
+    <ion-item id="rounded">
+      <ion-label >Password</ion-label>
       <ion-input type="password" formControlName="password"  ></ion-input>
     </ion-item>
     <ion-item *ngIf="!formgroup.controls.password.valid && password.touched">

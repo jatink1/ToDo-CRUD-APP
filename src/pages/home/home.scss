@@ -5,13 +5,22 @@
             text-align: center;
         }
         .box
-        {
-            text-align: center;
-            margin-top: 150px;
-            border: thick solid gray;
-            border-radius: 20px;
+        {width: 80%; 
+            margin-top: 40%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        #rounded{
+            background: transparent;
+            width: 100%;
+            height: 30px;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: thin solid black;
+        }
         .login
         {
             background: url('/src/assets/imgs/background.png');
