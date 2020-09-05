@@ -11,7 +11,7 @@ import { DoListPage } from '../do-list/do-list';
 })
 export class HomePage {
 
-  formgroup: FormGroup;
+  userLogin: FormGroup;
   email: AbstractControl;
   password: AbstractControl;
 
@@ -21,33 +21,33 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, private storage: Storage) {
 
-    this.formgroup = formBuilder.group({
+    this.userLogin = formBuilder.group({
       email: ['', Validators.compose([Validators.required,Validators.pattern('[^ @]*@[^ @]*')])],
       password: ['', Validators.compose([Validators.required,Validators.minLength(6),Validators.pattern('[a-zA-Z0-9 ]*')])],
     });
 
-    this.email = this.formgroup.controls['email'];
-    this.password = this.formgroup.controls['password'];
+    this.email = this.userLogin.controls['email'];
+    this.password = this.userLogin.controls['password'];
 
     
   }
 
   ionViewDidEnter()
   {
-    console.log('No error till here log in page loaded');
+   // console.log('No error till here log in page loaded');
   }
 
   sign()
   {
     this.navCtrl.push(SignUpPage);
-    console.log('No error till here as this pushed to sign up page');
-  }
+    //console.log('No error till here as this pushed to sign up page');
+  };
  
   
   
-  login()
+  async login()
   {
-    this.storage.get(this.data).then((val)=>{  //this retrives entire value stored such as name etc and binds it to a variable named val
+    await this.storage.get(this.data).then((val)=>{  //this retrives entire value stored such as name etc and binds it to a variable named val
       console.log(val['uemai']);      //now single/individual value is taken out as needed by their key names already specified
       console.log(val['upassword']);
       if (this.email.value === val['uemai'] && this.password.value === val['upassword'])

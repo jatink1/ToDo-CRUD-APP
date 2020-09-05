@@ -1,39 +1,43 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
  <ion-title class="title">
      To Do List
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding class="back">
-  <div class="box">
-  <form [formGroup]="formgroup">
-    <ion-item id="rounded">
-      <ion-label >Email</ion-label>
-      <ion-input type="text" formControlName="email" ></ion-input>
-    </ion-item><ion-item *ngIf="!formgroup.controls.email.valid && email.touched">
-        <p> *Email is wrong</p>
+<ion-content padding>
+  <div class="middle">
+    <form [formGroup]="userLogin">
+      <!-- Email input field -->
+      <ion-item>
+        <ion-label floating color="dark">Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item
+        no-lines
+        *ngIf="!userLogin.controls.email.valid && email.touched"
+      >
+        <p>Enter a valid Email</p>
       </ion-item>
 
-    <ion-item id="rounded">
-      <ion-label >Password</ion-label>
-      <ion-input type="password" formControlName="password"  ></ion-input>
-    </ion-item>
-    <ion-item *ngIf="!formgroup.controls.password.valid && password.touched">
-        <p> *Password entered is wrong
-        </p>
+      <!-- Password input field -->
+      <ion-item>
+        <ion-label floating color="dark">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
+      <ion-item
+        no-lines
+        *ngIf="!userLogin.controls.password.valid && password.touched"
+      >
+        <p>Password is incorrect</p>
+      </ion-item>
+    </form>
 
     <br>
-<br>
-<br>
-
-<button ion-button (click)="login()" round small>Login</button>
-<button ion-button (click)="sign()" class="signbtn" round small> Sign Up</button>
-</form>
-</div>
+    <button ion-button (click)="login()" round >Login</button>
+    <button ion-button (click)="sign()" class="signbtn" round >
+      Sign Up
+    </button>
+  </div>
 </ion-content>
-
-
-
